@@ -8,12 +8,22 @@
  # Service in the soundboardApp.
 ###
 angular.module 'soundboardApp'
-  .service 'SoundService', (Restangular) ->
-    sounds = Restangular.one('sounds')
-
+  .service 'SoundService', ($q, Restangular) ->
     return {
       getSounds: ->
-        return sounds.getList()
+        return Restangular.one('sounds').getList()
       playSound: (id) ->
         return Restangular.one('sounds', id).one('play').get()
+      getSound: (id) ->
+        return Restangular.one('sounds', id).get()
+      saveSound: (sound) ->
+        deferred = $q.defer()
+
+        unless sound.id? and sound.name?
+          deferred.reject('No id or name given')
+
+        sound.put().then (asd) ->
+          deferred.resolve()
+
+        return deferred.promise
     }
