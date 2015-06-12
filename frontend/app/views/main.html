@@ -1,0 +1,11 @@
+<div ng-show="!sounds.length" class="well text-center">
+  <h1>No Sounds :-(</h1>
+  <p class="small text-muted">Upload functionality is on the to-do list...</p>
+</div>
+<div ng-repeat="sound in sounds"  class="row">
+  <div class="col-xs-12">
+    <button class="btn btn-block btn-primary" ng-click="playSound(sound.id)">
+      {{sound.name}}
+    </button>
+  </div>
+</div>
