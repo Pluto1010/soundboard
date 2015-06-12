@@ -19,6 +19,7 @@ gem 'better_errors'
 gem 'binding_of_caller'
 gem 'bower-rails'
 gem 'paperclip'
+gem 'compass'
 
 group :development do
   gem 'pry'
