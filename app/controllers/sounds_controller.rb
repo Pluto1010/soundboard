@@ -67,7 +67,13 @@ class SoundsController < ApplicationController
 
   def play
     Thread.new do
-      play_command = "afplay #{@sound.soundfile.path}"
+      if os == :macosx
+        player_bin = "afplay"
+      else
+        player_bin = "mplayer -really-quiet"
+      end
+
+      play_command = "#{player_bin} #{@sound.soundfile.path}"
 
       Rails.logger.info play_command
       system play_command
