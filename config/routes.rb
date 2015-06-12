@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  # there has to be a better way than this to enable CORS OPTIONS call...
+  match 'sounds', to: 'sounds#index', via: [:options]
+  match 'sounds/:id', to: 'sounds#show', via: [:options]
+
   resources :sounds do
     get 'download', on: :member
     get 'play', on: :member
