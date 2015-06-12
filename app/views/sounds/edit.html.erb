@@ -1,0 +1,8 @@
+<h1>Editing Sound</h1>
+
+<%= render 'form' %>
+
+<%= link_to "Download", sound.soundfile.url(:original, false) %>
+
+<%= link_to 'Show', @sound %> |
+<%= link_to 'Back', sounds_path %>
