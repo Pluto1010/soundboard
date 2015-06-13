@@ -70,10 +70,10 @@ class SoundsController < ApplicationController
       if os == :macosx
         player_bin = "afplay"
       else
-        player_bin = "mplayer -really-quiet"
+        player_bin = "mplayer -really-quiet -ao alsa"
       end
 
-      play_command = "#{player_bin} #{@sound.soundfile.path}"
+      play_command = "nohup #{player_bin} #{@sound.soundfile.path} &> /dev/null < /dev/null"
 
       Rails.logger.info play_command
       system play_command
