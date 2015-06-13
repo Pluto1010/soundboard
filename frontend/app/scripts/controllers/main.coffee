@@ -8,12 +8,15 @@
  # Controller of the soundboardApp
 ###
 angular.module 'soundboardApp'
-  .controller 'MainCtrl', ($scope, SoundService) ->
+  .controller 'MainCtrl', ($scope, $location, SoundService) ->
 
     SoundService.getSounds().then (dat) ->
       console.log 'Sounds recieved', dat
       $scope.sounds = dat
 
-    $scope.playSound = (id) ->
+    $scope.play = (id) ->
       console.log 'Sending PLAY command', id
       SoundService.playSound(id)
+
+    $scope.edit = (id) ->
+      $location.path '/edit/'+id
