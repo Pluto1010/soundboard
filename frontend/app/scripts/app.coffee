@@ -19,6 +19,8 @@ angular
     'restangular'
     'angular-flash.service'
     'angular-flash.flash-alert-directive'
+    'ngFileUpload'
+    'ngBootbox'
   ]
   .config ($routeProvider, flashProvider, UrlConfig, RestangularProvider) ->
     $routeProvider

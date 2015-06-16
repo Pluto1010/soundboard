@@ -16,14 +16,8 @@ angular.module 'soundboardApp'
         return Restangular.one('sounds', id).one('play').get()
       getSound: (id) ->
         return Restangular.one('sounds', id).get()
-      saveSound: (sound) ->
-        deferred = $q.defer()
-
-        unless sound.id? and sound.name?
-          deferred.reject('No id or name given')
-
-        sound.put().then (asd) ->
-          deferred.resolve()
-
-        return deferred.promise
+      getSaveUrl: (id) ->
+        return Restangular.one('sounds', id).getRequestedUrl()
+      saveSoundName: (id, name) ->
+        return Restangular.one('sounds', id).customPUT({'sound': {'name': name}})
     }
