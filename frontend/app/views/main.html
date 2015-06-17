@@ -8,6 +8,7 @@
 </div>
 
 <div ng-show="!loading">
+
   <div ng-show="!sounds.length" class="well text-center">
     <h1>No Sounds :-(</h1>
     <p class="small text-muted">Upload functionality is on the to-do list...</p>
@@ -44,4 +45,7 @@
       </tbody>
     </table>
   </div>
+
+  <button class="btn btn-default" ng-click="newSound()">Neuen Sound hochladen</button>
+
 </div>

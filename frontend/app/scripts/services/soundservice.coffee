@@ -18,6 +18,8 @@ angular.module 'soundboardApp'
         return Restangular.one('sounds', id).get()
       getSaveUrl: (id) ->
         return Restangular.one('sounds', id).getRequestedUrl()
-      saveSoundName: (id, name) ->
+      updateSoundName: (id, name) ->
         return Restangular.one('sounds', id).customPUT({'sound': {'name': name}})
+      createSound: (name) ->
+        return Restangular.one('sounds').customPOST({'sound': {'name': name}})
     }

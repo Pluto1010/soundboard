@@ -23,3 +23,6 @@ angular.module 'soundboardApp'
 
     $scope.edit = (id) ->
       $location.path '/edit/'+id
+
+    $scope.newSound = ->
+      $location.path('/new')
