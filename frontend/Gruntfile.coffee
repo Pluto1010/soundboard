@@ -160,7 +160,7 @@ module.exports = (grunt) ->
     filerev: dist: src: [
       '<%= yeoman.dist %>/scripts/{,*/}*.js'
       '<%= yeoman.dist %>/styles/{,*/}*.css'
-      '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+      # '<%= yeoman.dist %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
       '<%= yeoman.dist %>/styles/fonts/*'
     ]
     useminPrepare:
@@ -230,7 +230,7 @@ module.exports = (grunt) ->
             '.htaccess'
             '*.html'
             'views/{,*/}*.html'
-            'images/{,*/}*.{webp}'
+            'images/{,*/}*.*'
             'styles/fonts/{,*/}*.*'
           ]
         }
@@ -271,7 +271,7 @@ module.exports = (grunt) ->
       dist: [
         'coffee'
         'compass:dist'
-        'imagemin'
+        # 'imagemin'
         'svgmin'
       ]
     karma: unit:
