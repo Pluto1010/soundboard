@@ -22,4 +22,6 @@ angular.module 'soundboardApp'
         return Restangular.one('sounds', id).customPUT({'sound': {'name': name}})
       createSound: (name) ->
         return Restangular.one('sounds').customPOST({'sound': {'name': name}})
+      deleteSound: (id) ->
+        return Restangular.one('sounds', id).remove()
     }
