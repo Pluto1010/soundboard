@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get 'play', on: :member
   end
 
-  get '/', to: redirect('/sounds')
+  get '/', to: redirect('/frontend/')
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

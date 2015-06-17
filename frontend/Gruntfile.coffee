@@ -14,7 +14,7 @@ module.exports = (grunt) ->
   # Configurable paths for the application
   appConfig =
     app: require('./bower.json').appPath or 'app'
-    dist: '../public'
+    dist: '../public/frontend'
   # Define the configuration for all the tasks
   grunt.initConfig
     yeoman: appConfig
@@ -282,6 +282,11 @@ module.exports = (grunt) ->
           'Env': 'local'
           'UrlConfig':
             'baseUrl': 'http://localhost:3000'
+      production:
+        constants:
+          'Env': 'production'
+          'UrlConfig':
+            'baseUrl': '/'
 
   grunt.registerTask 'serve', 'Compile then start a connect web server', (target) ->
     if target == 'dist'
@@ -338,4 +343,8 @@ module.exports = (grunt) ->
 
   grunt.registerTask 'local', [
     'ngconstant:local'
+  ]
+
+  grunt.registerTask 'production', [
+    'ngconstant:production'
   ]
