@@ -13,7 +13,7 @@ npm install -g bower &&
 echo "###############################" &&
 echo "RUNNING NPM INSTALL" &&
 echo "###############################" &&
-npm install &&
+NODE_ENV=development npm install &&
 echo "###############################" &&
 echo "RUNNING BOWER INSTALL" &&
 echo "###############################" &&
@@ -22,3 +22,5 @@ echo "###############################" &&
 echo "BUILDING, TEHEE" &&
 echo "###############################" &&
 grunt production build --force
+
+rm npm-debug.log
