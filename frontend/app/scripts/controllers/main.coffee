@@ -34,5 +34,9 @@ angular.module 'soundboardApp'
         $ngBootbox.alert 'Gel&ouml;scht...'
         $scope.loadSounds()
 
+    $scope.deleteAllSounds = ->
+      bootbox.dialog
+        message: '<img src="images/dickbutt.png" width="575"/>'
+
     $scope.loadSounds()
 
