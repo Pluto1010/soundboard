@@ -2,11 +2,10 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd $DIR
 cd ../frontend
-export NODE_ENV=development
 echo "###############################" &&
 echo "RUNNING NPM INSTALL" &&
 echo "###############################" &&
-NODE_ENV=development npm install &&
+npm install &&
 echo "###############################" &&
 echo "INSTALLING BOWER" &&
 echo "###############################" &&
@@ -15,7 +14,6 @@ echo "###############################" &&
 echo "INSTALLING GRUNT-CLI" &&
 echo "###############################" &&
 npm install -g grunt-cli &&
-
 echo "###############################" &&
 echo "RUNNING BOWER INSTALL" &&
 echo "###############################" &&
