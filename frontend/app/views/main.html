@@ -3,39 +3,45 @@
     <button type="button" class="close" ng-click="hide()">&times;</button>
 </div>
 
-<div ng-show="!sounds.length" class="well text-center">
-  <h1>No Sounds :-(</h1>
-  <p class="small text-muted">Upload functionality is on the to-do list...</p>
+<div ng-show="loading" class="text-center top-buffer">
+  <i class="fa fa-spinner fa-5x fa-spin"></i>
 </div>
 
-<div ng-show="sounds.length">
-  <h2>Liste aller Soundboard-Effekte</h2>
+<div ng-show="!loading">
+  <div ng-show="!sounds.length" class="well text-center">
+    <h1>No Sounds :-(</h1>
+    <p class="small text-muted">Upload functionality is on the to-do list...</p>
+  </div>
 
-  <table class="table table-condensed table-hover table-striped">
-    <col style="width:80%">
-    <col style="width:20%">
-    <thead>
-      <tr>
-        <th></th>
-        <th>Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="sound in sounds">
-        <td>
-          <button class="btn btn-block btn-primary" ng-click="play(sound.id)">
-            {{sound.name}}
-          </button>
-        </td>
-        <td class="text-right">
-          <button class="btn btn-primary" ng-click="edit(sound.id)">
-            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
-          </button>
-          <button class="btn btn-danger" ng-click="delete(sound.id)">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-          </button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <div ng-show="sounds.length">
+    <h2>Liste aller Soundboard-Effekte</h2>
+
+    <table class="table table-condensed table-hover table-striped">
+      <col style="width:80%">
+      <col style="width:20%">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="sound in sounds">
+          <td>
+            <button class="btn btn-block btn-primary" ng-click="play(sound.id)">
+              {{sound.name}}
+            </button>
+          </td>
+          <td class="text-right">
+            <button class="btn btn-primary" ng-click="edit(sound.id)">
+              <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+            </button>
+            <button class="btn btn-danger" ng-click="delete(sound.id)">
+              <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>

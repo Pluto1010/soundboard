@@ -10,9 +10,12 @@
 angular.module 'soundboardApp'
   .controller 'MainCtrl', ($scope, $location, SoundService) ->
 
+    $scope.loading = true
+
     SoundService.getSounds().then (dat) ->
-      console.log 'Sounds recieved', dat
+      # console.log 'Sounds recieved', dat
       $scope.sounds = dat
+      $scope.loading = false
 
     $scope.play = (id) ->
       console.log 'Sending PLAY command', id
