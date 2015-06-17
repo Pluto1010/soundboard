@@ -2,6 +2,8 @@
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd $DIR
 cd ../frontend
+export NODE_ENV=development
+
 echo "###############################" &&
 echo "INSTALLING GRUNT-CLI" &&
 echo "###############################" &&
@@ -13,7 +15,7 @@ npm install -g bower &&
 echo "###############################" &&
 echo "RUNNING NPM INSTALL" &&
 echo "###############################" &&
-NODE_ENV=development npm install &&
+npm install &&
 echo "###############################" &&
 echo "RUNNING BOWER INSTALL" &&
 echo "###############################" &&
