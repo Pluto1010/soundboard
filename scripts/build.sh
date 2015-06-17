@@ -22,5 +22,3 @@ echo "###############################" &&
 echo "BUILDING, TEHEE" &&
 echo "###############################" &&
 grunt production build --force
-
-rm npm-debug.log
