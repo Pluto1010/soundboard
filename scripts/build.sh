@@ -5,17 +5,18 @@ cd ../frontend
 export NODE_ENV=development
 
 echo "###############################" &&
-echo "INSTALLING GRUNT-CLI" &&
+echo "RUNNING NPM INSTALL" &&
 echo "###############################" &&
-npm install -g grunt-cli &&
+npm install &&
 echo "###############################" &&
 echo "INSTALLING BOWER" &&
 echo "###############################" &&
 npm install -g bower &&
 echo "###############################" &&
-echo "RUNNING NPM INSTALL" &&
+echo "INSTALLING GRUNT-CLI" &&
 echo "###############################" &&
-npm install &&
+npm install -g grunt-cli &&
+
 echo "###############################" &&
 echo "RUNNING BOWER INSTALL" &&
 echo "###############################" &&
