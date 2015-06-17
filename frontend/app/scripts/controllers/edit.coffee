@@ -29,6 +29,14 @@ angular.module 'soundboardApp'
       promiseSoundFile = $q.defer()
       promiseSoundName = $q.defer()
 
+      if soundname?
+        console.log 'Uploading Sound'
+        SoundService.saveSoundName(sid, soundname).then ->
+          console.log 'Uploading Sound done'
+          promiseSoundName.resolve()
+      else
+        promiseSoundName.resolve()
+
       if soundfile?
         console.log 'Uploading File'
         # @todo Have to figure out how to send name in same request as file...
@@ -45,14 +53,6 @@ angular.module 'soundboardApp'
           promiseSoundFile.resolve()
       else
         promiseSoundFile.resolve()
-
-      if soundname?
-        console.log 'Uploading Sound'
-        SoundService.saveSoundName(sid, soundname).then ->
-          console.log 'Uploading Sound done'
-          promiseSoundName.resolve()
-      else
-        promiseSoundName.resolve()
 
       $q.all([promiseSoundFile.promise, promiseSoundName.promise]).then ->
         flash.success = "\"#{soundname}\" gespeichert!"
