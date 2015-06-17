@@ -30,6 +30,9 @@ angular
       .when '/edit/:id',
         templateUrl: 'views/edit.html'
         controller: 'EditCtrl'
+      .when '/new',
+        templateUrl: 'views/edit.html'
+        controller: 'EditCtrl'
       .otherwise
         redirectTo: '/'
 
