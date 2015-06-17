@@ -70,7 +70,7 @@ class SoundsController < ApplicationController
       if os == :macosx
         player_bin = "afplay"
       else
-        player_bin = "mplayer -ao alsa"
+        player_bin = "mplayer"
       end
 
       play_command = "nohup #{player_bin} #{@sound.soundfile.path}"
