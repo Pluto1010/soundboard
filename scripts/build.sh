@@ -3,11 +3,10 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 cd $DIR
 cd ../frontend
 export NODE_ENV=development
-
 echo "###############################" &&
 echo "RUNNING NPM INSTALL" &&
 echo "###############################" &&
-npm install &&
+NODE_ENV=development npm install &&
 echo "###############################" &&
 echo "INSTALLING BOWER" &&
 echo "###############################" &&
