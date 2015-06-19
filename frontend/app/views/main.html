@@ -19,14 +19,11 @@
 
     <div class="row">
       <div class="col-md-12">
-        <div ng-repeat="sound in sounds" class="soundDisplay" ng-mouseenter="sound.displayActions = true" ng-mouseleave="sound.displayActions = false">
+        <div ng-repeat="sound in sounds" class="soundDisplay" ng-mouseenter="sound.displayActions = true" ng-mouseleave="sound.displayActions = false" ng-click="playSound(sound.id)">
           <div class="soundTitle">{{sound.name}}</div>
-          <div class="soundPlay" ng-click="playSound(sound.id)" style="">
-            <img src="images/play.png" style="margin-left:35px;margin-top:5px;">
-          </div>
           <div class="soundActions" ng-show="sound.displayActions">
-            <a href="#/edit/{{sound.id}}" style="float:left;" >Editieren</a>
-            <a href="#edit" style="float:right;" ng-bootbox-confirm="Willst du '{{sound.name}}' wirklich l&ouml;schen?" ng-bootbox-confirm-action="deleteSound(sound.id)">Löschen</a>
+            <a ng-click="editSound({{sound.id}}); $event.preventDefault(); $event.stopPropagation();" style="float:left;">Editieren</a>
+            <a href="#delete" style="float:right;" ng-bootbox-confirm="Willst du '{{sound.name}}' wirklich l&ouml;schen?" ng-bootbox-confirm-action="deleteSound(sound.id); $event.preventDefault(); $event.stopPropagation();" ng-click="$event.preventDefault(); $event.stopPropagation();">Löschen</a>
           </div>
         </div>
       </div>
@@ -35,7 +32,6 @@
 
   <div class="row bottom-buffer">
     <button class="btn btn-default" ng-click="newSound()">Neuen Sound hochladen</button>
-    <button class="btn btn-danger" ng-click="deleteAllSounds()">Alle Sounds l&ouml;schen</button>
   </div>
 
 </div>

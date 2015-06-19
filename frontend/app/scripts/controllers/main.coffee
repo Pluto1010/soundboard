@@ -23,7 +23,7 @@ angular.module 'soundboardApp'
       console.log 'Sending PLAY command', id
       SoundService.playSound(id)
 
-    $scope.editSound = (id) ->
+    $scope.editSound = (id, $event) ->
       $location.path '/edit/'+id
 
     $scope.newSound = ->
@@ -33,10 +33,6 @@ angular.module 'soundboardApp'
       SoundService.deleteSound(id).then ->
         $ngBootbox.alert 'Gel&ouml;scht...'
         $scope.loadSounds()
-
-    $scope.deleteAllSounds = ->
-      bootbox.dialog
-        message: '<img src="images/dickbutt.png" width="575"/>'
 
     $scope.loadSounds()
 
