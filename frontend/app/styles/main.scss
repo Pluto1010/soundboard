@@ -24,5 +24,40 @@ body {
 }
 
 .bottom-buffer {
+  margin-top: $margin;
   margin-bottom: $margin;
 }
+
+.soundDisplay {
+  width:135px;
+  height:135px;
+  float:left;
+  border: 1px solid silver;
+  margin: 0 $margin $margin 0;
+  position: relative;
+  background: url(../images/play.png) no-repeat center center;
+  cursor:pointer;
+}
+
+.soundTitle {
+  background-color: rgba(249,249,249,0.5);
+  text-align:center;
+  padding:5px;
+}
+
+.soundActions {
+  position: absolute;
+  height:30px;
+  background-color: rgba(249,249,249,0.5);
+  padding-top:5px;
+  padding-left:5px;
+  padding-right:5px;
+  width: 133px;
+
+  top: -moz-calc(135px - #{32px});
+  top: -webkit-calc(135px - #{32px});
+  top: -o-calc(135px - #{32px});
+  top: calc(135px - #{32px});
+
+}
+
