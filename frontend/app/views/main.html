@@ -22,8 +22,8 @@
         <div ng-repeat="sound in sounds" class="soundDisplay" ng-mouseenter="sound.displayActions = true" ng-mouseleave="sound.displayActions = false" ng-click="playSound(sound.id)">
           <div class="soundTitle">{{sound.name}}</div>
           <div class="soundActions" ng-show="sound.displayActions">
-            <a href="#" class='pull-left' ng-click="editSound({{sound.id}}); $event.preventDefault(); $event.stopPropagation();">Editieren</a>
-            <a href="#delete" class="pull-right" ng-bootbox-confirm="Willst du '{{sound.name}}' wirklich l&ouml;schen?" ng-bootbox-confirm-action="deleteSound(sound.id); $event.preventDefault(); $event.stopPropagation();" ng-click="$event.preventDefault(); $event.stopPropagation();">Löschen</a>
+            <a href="" class='pull-left' ng-click="editSound(sound.id);" stop-propagation>Editieren</a>
+            <a href="" class="pull-right" ng-bootbox-confirm="Willst du '{{sound.name}}' wirklich l&ouml;schen?" ng-bootbox-confirm-action="deleteSound(sound.id)" stop-propagation>Löschen</a>
           </div>
         </div>
       </div>
